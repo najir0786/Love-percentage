@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Percentage Calculator</title>
+  <style>
+    *{
+      margin: 0%;
+      padding: 0%;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image:url(love.jpg) ;
+      background-size: auto;
+    }
+
+    h1 {
+      color: #e31212;
+      border: 2px solid green;
+    }
+    .naj{
+      background-color: black;
+    }
+
+    #result {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2ecc71;
+    }
+
+    #calculate-btn {
+      margin-top: 50px;
+      padding: 10px 20px;
+      font-size: 40px;
+      background-color: #d316aa;
+      color: #d4e20e;
+      border: none;
+      border-radius:45%;
+      cursor: pointer;
+      
+    }
+    .div{
+        background-image:url(love.jpg);
+        height: 100px;
+        width: 100%;    
+        }
+        .first{
+          font-size: 30px;
+          color: #1cd823;
+        }
+  </style>
+</head>
+<body>
+ <div class="naj"> <h1>Love Percentage Calculator</h1></div>
+ <div class="div">
+  <label class="first" for="person1">Name Of Person One:</label>
+  <input class="first" type="text" id="person1" placeholder="Enter name of person 1" required>
+  <br>
+  <label class="first" for="person2">Name Of Person Two:</label>
+  <input class="first" type="text" id="person2" placeholder="Enter name of person 2" required>
+  <br>
+  <button id="calculate-btn">Calculate Love %</button>
+  <div id="result"></div>
+ </div>
+
+  <script>
+    document.getElementById("calculate-btn").addEventListener("click", function () {
+      var person1 = document.getElementById("person1").value;
+      var person2 = document.getElementById("person2").value;
+
+      if (person1.trim() === "" || person2.trim() === "") {
+        alert("Please enter both names!");
+        return;
+      }
+
+      // Generate a random love percentage between 50 and 100
+      var lovePercentage = Math.floor(Math.random() * 51) + 50;
+
+      var resultDiv = document.getElementById("result");
+      resultDiv.textContent = `${person1} and ${person2}'s Love Percentage is ${lovePercentage}%`;
+    });
+  </script>
+</body>
+</html>
